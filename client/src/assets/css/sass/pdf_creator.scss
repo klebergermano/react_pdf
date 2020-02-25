@@ -1,0 +1,66 @@
+body {
+  background: #333;
+}
+.container {
+  width: 1170px;
+  min-height: 100vh;
+  background: #f0f0f0;
+  margin: 0 auto;
+}
+.boletos {
+  padding: 20px 60px;
+  background: #fff;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  div {
+    padding: 15px 15px;
+    width: auto;
+    float: left;
+    border: 1px solid #ccc;
+    width: 14.14%;
+  }
+  label {
+    height: 27px;
+    padding: 4px 5px;
+    display: block;
+    width: 100%;
+    background: rgb(86, 83, 90);
+    color: #fff;
+    font-size: 13px;
+  }
+  input {
+    margin: 0px 0px;
+    width: 100%;
+    padding: 3px 5px;
+  }
+}
+
+.div-responsavel,
+.div-aluno,
+.div-curso {
+  width: 33% !important;
+  label {
+    width: 104px;
+    float: left;
+  }
+  input {
+    width: 210px !important;
+    float: right !important;
+  }
+}
+#btn_gerar_boleto {
+  display: block;
+  clear: both;
+  background: rgb(34, 56, 146);
+  border: 0px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  margin: 0 auto;
+  margin-top: 160px;
+}
+#btn_gerar_boleto:hover {
+  background: rgb(3, 74, 182);
+}

@@ -1,0 +1,302 @@
+<!DOCTYPE >
+<html>
+  <head>
+    <title></title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Archivo+Black|Roboto:500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .a4 {
+        font-family: "Open Sans";
+        width: 21cm;
+        height: 29.7cm;
+        overflow: hidden;
+        margin: 0 auto;
+        background: #f0f0f0;
+      }
+      .bg_boleto {
+        width: 21cm;
+        border-bottom: 1px dotted #fff;
+        height: 7.43cm;
+        background: #fff;
+        overflow: hidden;
+      }
+      .bloco_cliente {
+        padding: 10px 15px 10px 30px;
+        float: left;
+        width: 7.72cm;
+        height: 7.43cm;
+        border-right: 1px dotted #ccc;
+      }
+      .bloco_destaque {
+        padding: 10px 20px 10px 10px;
+
+        background: #fff;
+        float: right;
+        width: 13.12cm;
+        height: 7.43cm;
+        border-right: 1px dotted #fff;
+      }
+      th {
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #bbb;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 0px 4px 0px 10px;
+        height: 25px;
+        overflow: hidden;
+        font-size: 13px;
+      }
+      .font_6 {
+        font-size: 10px;
+      }
+      .label_top {
+        font-weight: bold;
+        clear: both;
+        display: block;
+        font-size: 9px;
+        padding-top: 2px;
+      }
+      .value {
+        font-size: 12px;
+      }
+      .valor_total {
+        font-size: 14px;
+      }
+      .seta_nome {
+        padding: 10px 10px !important;
+      }
+      .seta_nome span {
+        font-weight: normal;
+        height: 35px;
+      }
+      .RA {
+        font-size: 10px;
+      }
+
+      hr {
+        margin-top: 25px;
+      }
+
+      .ass {
+        padding: 8px;
+        border-bottom: 0px;
+        border-left: 0px !important;
+      }
+      .ass_label {
+        margin-top: 10px;
+        float: left;
+        padding: 0 10px 0px 0px;
+      }
+      .data_destaque {
+        margin-top: 10px;
+        float: right;
+        padding: 0px 10px;
+      }
+
+      .curso {
+        font-size: 15px;
+        padding: 0 5px;
+        text-transform: uppercase;
+      }
+      h3 {
+        padding: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        float: left;
+        font-weight: bolder;
+      }
+      b {
+        letter-spacing: 0px;
+        font-family: "Roboto";
+        font-size: 11px;
+        color: #444;
+      }
+      .bloco_cliente td {
+        font-size: 11px;
+        padding: 4px 5px 4px 5px;
+      }
+      .cifrao_total {
+        font-size: 13px;
+      }
+
+      .bloco_cliente b {
+        font-size: 10px;
+      }
+      .data_cliente {
+        height: 50px;
+      }
+      .RA_cliente {
+        font-size: 8px !important;
+      }
+      .n_lanc,
+      .n_lanc b {
+        font-size: 9px !important;
+      }
+      .curso_cliente {
+        font-size: 13px;
+        padding: 0 5px;
+        text-transform: uppercase;
+      }
+      .responsavel,
+      .responsavel_cliente,
+      .aluno,
+      .aluno_cliente {
+      }
+    </style>
+  </head>
+  <body>
+    <div class="a4">
+      <div class="bg_boleto">
+        <div class="bloco_cliente">
+          <table style="width:100%">
+            <tr width="100%">
+              <td colspan="10">
+                <b>Responsável:</b>
+                <span class="responsavel_cliente">Fulando de Tal</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="font_6" colspan="6">
+                <b>Aluno(a):</b
+                ><span class="aluno_cliente"> Ciclano Filho</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="font_6" colspan="1">
+                <span class="label_top"><b>Nº Lanç.</b></span>
+                C002B008
+              </td>
+
+              <td colspan="1">
+                <span class="label_top"><b>Parcela</b></span>
+                1/12
+              </td>
+              <td colspan="1">
+                <span class="label_top"><b>Vencimento</b></span>
+                19/12/2019
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="1">
+                <span class="label_top"><b>Valor</b></span>
+                R$120,00
+              </td>
+              <td colspan="1">
+                <span class="label_top"><b>Desconto</b></span>
+
+                R$ 51,00
+              </td>
+              <td colspan="1">
+                <span class="label_top"><b>Valor Total</b></span>
+
+                R$ 69,00
+              </td>
+            </tr>
+            <tr>
+              <td colspan="5">
+                <b>Curso:</b><span class="curso_cliente"> Informática</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="5"><b>Obs.: </b></td>
+            </tr>
+            <tr>
+              <td colspan="3"></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <span class="RA_cliente">Via do aluno: RA0008</span>
+              </td>
+
+              <td colspan="3">
+                <br /><span class="data_cliente"> Data ___/___/____</span><br />
+              </td>
+            </tr>
+          </table>
+        </div>
+        <!-------------------------------------------------------------->
+        <div class="bloco_destaque">
+          <table style="width:100%">
+            <tr width="100%">
+              <td colspan="4" class="seta_nome">
+                <h3><span>SETA CURSOS </span>RECIBO DE PAGAMENTO</h3>
+              </td>
+              <td class="font_6" colspan="1"><b>Nº Lanç.</b> C002B008</td>
+            </tr>
+            <tr>
+              <td colspan="5">
+                <b>Responsável: </b
+                ><span class="responsavel">Fulano de Tal</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="5">
+                <b>Aluno(a): </b><span class="responsavel">Ciclano Filho</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="label_top"><b>Parcela</b></span>
+                <span class="value"> 1/12</span>
+              </td>
+              <td>
+                <span class="label_top"><b>Vencimento</b></span>
+                <span class="value"> 19/12/2019</span>
+              </td>
+              <td>
+                <span class="label_top"><b>Valor</b></span>
+                <span class="value"> R$ 120,00</span>
+              </td>
+              <td>
+                <span class="label_top"><b>Desconto</b></span>
+                <span class="value"> R$ 51,00 </span>
+              </td>
+              <td>
+                <span class="label_top"><b>Valor Total</b></span>
+                <span class="valor_total">
+                  <span class="cifrao_total">R$</span> <b>69,00</b></span
+                >
+              </td>
+            </tr>
+            <tr>
+              <td colspan="5">
+                <b>Curso: </b><span class="curso">Informática</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="5"><b>Obs.: </b></td>
+            </tr>
+            <tr>
+              <td colspan="4"></td>
+              <td><span class="RA">Via da escola: RA0008</span></td>
+            </tr>
+            <tr>
+              <td colspan="5" class="ass">
+                <span class="ass_label">Ass.: </span
+                ><span class="data_destaque">Data ___/___/____</span>
+                <hr />
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
