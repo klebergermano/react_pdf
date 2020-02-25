@@ -1,12 +1,28 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { saveAs } from "file-saver";
+import { handleTemplate } from "./components/handleTemplate";
+//import Boleto from "./components/boleto";
 import "./assets/css/style.css";
+import ReactDOM from "react-dom";
 
 import "./App.css";
 
 class App extends Component {
   state = {
+    boleto_master: {
+      n_lanc: "",
+      responsavel: "",
+      aluno: "",
+      parcela: "",
+      vencimento: "",
+      valor: "",
+      desconto: "",
+      valor_total: "",
+      curso: "",
+      RA: "",
+      template: ""
+    },
     boleto_1: {
       n_lanc: "",
       responsavel: "",
@@ -25,157 +41,6 @@ class App extends Component {
   showState = () => {
     console.log(this.state);
   };
-
-  handleTemplate(
-    n_lanc,
-    responsavel,
-    aluno,
-    curso,
-    parcela,
-    vencimento,
-    valor,
-    desconto,
-    valor_total,
-    RA
-  ) {
-    return ` <div class="bg_boleto">
-    <div class="bloco_cliente">
-      <table style="width:100%">
-        <tr width="100%">
-          <td colspan="10">
-            <b>Responsável:</b>
-            <span class="responsavel_cliente">${responsavel}</span>
-          </td>
-        </tr>
-        <tr>
-          <td class="font_6" colspan="6">
-            <b>Aluno(a):</b
-            ><span class="aluno_cliente"> ${aluno}</span>
-          </td>
-        </tr>
-
-        <tr>
-          <td class="font_6" colspan="1">
-            <span class="label_top"><b>Nº Lanç.</b></span>
-            ${n_lanc}
-          </td>
-
-          <td colspan="1">
-            <span class="label_top"><b>Parcela</b></span>
-           ${parcela}
-          </td>
-          <td colspan="1">
-            <span class="label_top"><b>Vencimento</b></span>
-            ${vencimento}
-          </td>
-        </tr>
-
-        <tr>
-          <td colspan="1">
-            <span class="label_top"><b>Valor</b></span>
-            R$ ${valor}
-          </td>
-          <td colspan="1">
-            <span class="label_top"><b>Desconto</b></span>
-
-            R$ ${desconto}
-          </td>
-          <td colspan="1">
-            <span class="label_top"><b>Valor Total</b></span>
-
-            R$ ${valor_total}
-          </td>
-        </tr>
-        <tr>
-          <td colspan="5">
-            <b>Curso:</b><span class="curso_cliente"> ${curso}</span>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="5"><b>Obs.: </b></td>
-        </tr>
-        <tr>
-          <td colspan="3"></td>
-        </tr>
-        <tr>
-          <td colspan="2">
-            <span class="RA_cliente">Via do aluno: RA${RA}</span>
-          </td>
-
-          <td colspan="3">
-            <br /><span class="data_cliente"> Data ___/___/____</span><br />
-          </td>
-        </tr>
-      </table>
-    </div>
-    <!-------------------------------------------------------------->
-    <div class="bloco_destaque">
-      <table style="width:100%">
-        <tr width="100%">
-          <td colspan="4" class="seta_nome">
-            <h3><span>SETA CURSOS </span>RECIBO DE PAGAMENTO</h3>
-          </td>
-          <td class="font_6" colspan="1"><b>Nº Lanç.</b> ${n_lanc}</td>
-        </tr>
-        <tr>
-          <td colspan="5">
-            <b>Responsável: </b
-            ><span class="responsavel">${responsavel}</span>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="5">
-            <b>Aluno(a): </b><span class="responsavel">${aluno}</span>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <span class="label_top"><b>Parcela</b></span>
-            <span class="value"> ${parcela}</span>
-          </td>
-          <td>
-            <span class="label_top"><b>Vencimento</b></span>
-            <span class="value"> ${vencimento}</span>
-          </td>
-          <td>
-            <span class="label_top"><b>Valor</b></span>
-            <span class="value"> R$ ${valor}</span>
-          </td>
-          <td>
-            <span class="label_top"><b>Desconto</b></span>
-            <span class="value"> R$ ${desconto} </span>
-          </td>
-          <td>
-            <span class="label_top"><b>Valor Total</b></span>
-            <span class="valor_total">
-              <span class="cifrao_total">R$</span> <b>${valor_total}</b></span
-            >
-          </td>
-        </tr>
-        <tr>
-          <td colspan="5">
-            <b>Curso: </b><span class="curso">${curso}</span>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="5"><b>Obs.: </b></td>
-        </tr>
-        <tr>
-          <td colspan="4"></td>
-          <td><span class="RA">Via da escola: RA${RA}</span></td>
-        </tr>
-        <tr>
-          <td colspan="5" class="ass">
-            <span class="ass_label">Ass.: </span
-            ><span class="data_destaque">Data ___/___/____</span>
-            <hr />
-          </td>
-        </tr>
-      </table>
-    </div>
-  </div>               
-  `;
-  }
 
   handleChange = e => {
     let id = e.target.id;
@@ -201,7 +66,9 @@ class App extends Component {
         let desconto = this.state[boleto].desconto;
         let valor_total = this.state[boleto].valor_total;
         let RA = this.state[boleto].RA;
-        let template = this.handleTemplate(
+
+        //invoc handleTemplate to create Template
+        let template = handleTemplate(
           n_lanc,
           responsavel,
           aluno,
@@ -234,18 +101,147 @@ class App extends Component {
       });
   };
 
+  gerarBoleto() {
+    alert("ok");
+  }
+  insertBoleto = () => {
+    let num_boletos = 4;
+    for (let i = 1; i <= num_boletos; i++) {
+      let target = document.querySelector("#bg_boleto_" + i);
+      var num = i;
+      ReactDOM.render(
+        <div id={"boleto_" + num} className="boletos">
+          <div className="tag_boletos">
+            <h5>Boleto-{num}</h5>
+          </div>
+          <div class="div-responsavel">
+            <label>Responsável</label>
+
+            <input
+              className="boleto-responsavel"
+              id={"boleto_" + num + "-responsavel"}
+              type="text"
+              name="responsavel"
+              onChange={this.handleChange}
+            />
+          </div>
+
+          <div class="div-aluno">
+            <label>Aluno </label>
+
+            <input
+              className="boleto-aluno"
+              id={"boleto_" + num + "-aluno"}
+              type="text"
+              name="aluno"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div class="div-curso">
+            <label>Curso </label>
+
+            <input
+              className="boleto-curso"
+              id={"boleto_" + num + "-curso"}
+              type="text"
+              name="curso"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div class="div-n-lanc">
+            <label>Nº Lanç.</label>
+
+            <input
+              className="boleto-n_lanc"
+              id={"boleto_" + num + "-n_lanc"}
+              type="text"
+              placeholder=""
+              name="n_lanc"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>
+            <label>Parcela </label>
+            <input
+              className="boleto-parcela"
+              id="boleto_master-parcela"
+              type="number"
+              name="parcela"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>
+            <label>Vencimento </label>
+            <input
+              className="boleto-vencimento"
+              id={"boleto_" + num + "-vencimento"}
+              type="texto"
+              name="vencimento"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>
+            <label>Valor </label>
+            <input
+              className="boleto-valor"
+              id={"boleto_" + num + "-valor"}
+              type="texto"
+              name="valor"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>
+            <label>Desconto </label>
+            <input
+              className="boleto-desconto"
+              id={"boleto_" + num + "-desconto"}
+              type="texto"
+              name="desconto"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>
+            <label>Valor Total </label>
+            <input
+              className="boleto-valor_total"
+              id={"boleto_" + num + "-valor_total"}
+              type="texto"
+              name="valor_total"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>
+            <label>R.A </label>
+            <input
+              className="boleto-RA"
+              id={"boleto_" + num + "-RA"}
+              type="texto"
+              name="RA"
+              onChange={this.handleChange}
+            />
+          </div>
+        </div>,
+        target
+      );
+    }
+  };
+
   render() {
     return (
       <div className="App">
         <div className="container">
-          {" "}
-          <div id="boleto_1" className="boletos">
+          <div className="bg_buttons">
+            <button id="btn_download_pdf" onClick={this.createAndDownloadPdf}>
+              Download PDF
+            </button>
+          </div>
+          <div id="boleto_master" className="boletos">
             <div class="div-responsavel">
-              <label>Responsável </label>
+              <label>Responsável</label>
 
               <input
                 className="boleto-responsavel"
-                id="boleto_1-responsavel"
+                id="boleto_master-responsavel"
                 type="text"
                 name="responsavel"
                 onChange={this.handleChange}
@@ -257,7 +253,7 @@ class App extends Component {
 
               <input
                 className="boleto-aluno"
-                id="boleto_1-aluno"
+                id="boleto_master-aluno"
                 type="text"
                 name="aluno"
                 onChange={this.handleChange}
@@ -268,7 +264,7 @@ class App extends Component {
 
               <input
                 className="boleto-curso"
-                id="boleto_1-curso"
+                id="boleto_master-curso"
                 type="text"
                 name="curso"
                 onChange={this.handleChange}
@@ -279,7 +275,7 @@ class App extends Component {
 
               <input
                 className="boleto-n_lanc"
-                id="boleto_1-n_lanc"
+                id="boleto_master-n_lanc"
                 type="text"
                 placeholder=""
                 name="n_lanc"
@@ -290,7 +286,7 @@ class App extends Component {
               <label>Parcela </label>
               <input
                 className="boleto-parcela"
-                id="boleto_1-parcela"
+                id="boleto_master-parcela"
                 type="number"
                 name="parcela"
                 onChange={this.handleChange}
@@ -300,7 +296,7 @@ class App extends Component {
               <label>Vencimento </label>
               <input
                 className="boleto-vencimento"
-                id="boleto_1-vencimento"
+                id="boleto_master-vencimento"
                 type="texto"
                 name="vencimento"
                 onChange={this.handleChange}
@@ -310,9 +306,8 @@ class App extends Component {
               <label>Valor </label>
               <input
                 className="boleto-valor"
-                id="boleto_1-valor"
+                id="boleto_master-valor"
                 type="texto"
-                placeholder="Valor"
                 name="valor"
                 onChange={this.handleChange}
               />
@@ -321,7 +316,7 @@ class App extends Component {
               <label>Desconto </label>
               <input
                 className="boleto-desconto"
-                id="boleto_1-desconto"
+                id="boleto_master-desconto"
                 type="texto"
                 name="desconto"
                 onChange={this.handleChange}
@@ -331,7 +326,7 @@ class App extends Component {
               <label>Valor Total </label>
               <input
                 className="boleto-valor_total"
-                id="boleto_1-valor_total"
+                id="boleto_master-valor_total"
                 type="texto"
                 name="valor_total"
                 onChange={this.handleChange}
@@ -341,16 +336,44 @@ class App extends Component {
               <label>R.A </label>
               <input
                 className="boleto-RA"
-                id="boleto_1-RA"
+                id="boleto_master-RA"
                 type="texto"
                 name="RA"
                 onChange={this.handleChange}
               />
             </div>
-            <button id="btn_gerar_boleto" onClick={this.createAndDownloadPdf}>
-              Download PDF
+          </div>
+          <div>
+            <button id="btn_gerar_boleto" onClick={this.insertBoleto}>
+              Gerar Boletos
             </button>
           </div>
+          <div id="bg_boleto_1"></div>
+          <div id="bg_boleto_2"></div>
+          <div id="bg_boleto_3"></div>
+          <div id="bg_boleto_4"></div>
+          <div id="bg_boleto_5"></div>
+          <div id="bg_boleto_6"></div>
+          <div id="bg_boleto_7"></div>
+          <div id="bg_boleto_8"></div>
+          <div id="bg_boleto_9"></div>
+          <div id="bg_boleto_10"></div>
+          <div id="bg_boleto_11"></div>
+          <div id="bg_boleto_12"></div>
+          <div id="bg_boleto_13"></div>
+          <div id="bg_boleto_14"></div>
+          <div id="bg_boleto_15"></div>
+          <div id="bg_boleto_16"></div>
+          <div id="bg_boleto_17"></div>
+          <div id="bg_boleto_18"></div>
+          <div id="bg_boleto_19"></div>
+          <div id="bg_boleto_20"></div>
+          <div id="bg_boleto_21"></div>
+          <div id="bg_boleto_22"></div>
+          <div id="bg_boleto_23"></div>
+          <div id="bg_boleto_24"></div>
+
+          <br />
         </div>
       </div>
     );

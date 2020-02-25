@@ -7,26 +7,29 @@ body {
   background: #f0f0f0;
   margin: 0 auto;
 }
+
 .boletos {
   padding: 20px 60px;
   background: #fff;
   overflow: hidden;
   width: 100%;
   height: auto;
+  border: 1px solid #ccc;
   div {
     padding: 15px 15px;
     width: auto;
     float: left;
     border: 1px solid #ccc;
     width: 14.14%;
+    background: #fff;
   }
   label {
     height: 27px;
     padding: 4px 5px;
     display: block;
     width: 100%;
-    background: rgb(86, 83, 90);
-    color: #fff;
+    // background: rgb(86, 83, 90);
+    color: #333;
     font-size: 13px;
   }
   input {
@@ -49,7 +52,7 @@ body {
     float: right !important;
   }
 }
-#btn_gerar_boleto {
+#btn_download_pdf {
   display: block;
   clear: both;
   background: rgb(34, 56, 146);
@@ -59,8 +62,38 @@ body {
   color: #fff;
   cursor: pointer;
   margin: 0 auto;
-  margin-top: 160px;
+  margin-top: 0px;
+}
+#btn_download_pdf:hover {
+  background: rgb(3, 74, 182);
+}
+#btn_gerar_boleto {
+  display: block;
+  background: rgb(124, 127, 141);
+  border: 0px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 20px;
+  float: left;
 }
 #btn_gerar_boleto:hover {
-  background: rgb(3, 74, 182);
+  background: rgb(117, 139, 172);
+}
+.bg_buttons {
+  padding: 10px 30px;
+  button {
+    float: right;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+}
+#boleto_master,
+#boleto_master div {
+  background: #f0f0f0;
+}
+.tag_boletos {
+  background: #333;
+  text-align: center;
 }

@@ -711,6 +711,7 @@ body {
   overflow: hidden;
   width: 100%;
   height: auto;
+  border: 1px solid #ccc;
 }
 .boletos div {
   padding: 15px 15px;
@@ -718,14 +719,14 @@ body {
   float: left;
   border: 1px solid #ccc;
   width: 14.14%;
+  background: #fff;
 }
 .boletos label {
   height: 27px;
   padding: 4px 5px;
   display: block;
   width: 100%;
-  background: #56535a;
-  color: #fff;
+  color: #333;
   font-size: 13px;
 }
 .boletos input {
@@ -752,7 +753,7 @@ body {
   float: right !important;
 }
 
-#btn_gerar_boleto {
+#btn_download_pdf {
   display: block;
   clear: both;
   background: #223892;
@@ -762,11 +763,46 @@ body {
   color: #fff;
   cursor: pointer;
   margin: 0 auto;
-  margin-top: 160px;
+  margin-top: 0px;
+}
+
+#btn_download_pdf:hover {
+  background: #034ab6;
+}
+
+#btn_gerar_boleto {
+  display: block;
+  background: #7c7f8d;
+  border: 0px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 20px;
+  float: left;
 }
 
 #btn_gerar_boleto:hover {
-  background: #034ab6;
+  background: #758bac;
+}
+
+.bg_buttons {
+  padding: 10px 30px;
+}
+.bg_buttons button {
+  float: right;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+#boleto_master,
+#boleto_master div {
+  background: #f0f0f0;
+}
+
+.tag_boletos {
+  background: #333;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
