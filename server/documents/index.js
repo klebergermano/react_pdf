@@ -1,4 +1,27 @@
-module.exports = ({ boleto_1 }) => {
+module.exports = ({
+  boleto_1,
+  boleto_2,
+  boleto_3,
+  boleto_4,
+  boleto_5,
+  boleto_6,
+  boleto_7,
+  boleto_8,
+  boleto_9,
+  boleto_10,
+  boleto_11,
+  boleto_12,
+  boleto_13,
+  boleto_14,
+  boleto_15,
+  boleto_16,
+  boleto_17,
+  boleto_18,
+  boleto_19,
+  boleto_20,
+  boleto_21,
+  boleto_22
+}) => {
   const today = new Date();
 
   return `
@@ -47,6 +70,25 @@ module.exports = ({ boleto_1 }) => {
       <div class="a4">
 
 ${boleto_1.template}
+
+${boleto_2.template}
+${boleto_3.template}
+${boleto_4.template}
+${boleto_5.template}
+${boleto_6.template}
+${boleto_7.template}
+${boleto_8.template}
+${boleto_9.template}
+${boleto_10.template}
+${boleto_11.template}
+${boleto_12.template}
+${boleto_13.template}
+${boleto_14.template}
+${boleto_15.template}
+${boleto_16.template}
+
+
+
 
         
       </div>

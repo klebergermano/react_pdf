@@ -9,19 +9,42 @@ body {
 }
 
 .boletos {
+  display: none;
   padding: 20px 60px;
   background: #fff;
   overflow: hidden;
   width: 100%;
   height: auto;
   border: 1px solid #ccc;
+  margin: 5px 0px;
   div {
-    padding: 15px 15px;
-    width: auto;
+    padding: 15px 10px;
     float: left;
     border: 1px solid #ccc;
     width: 14.14%;
     background: #fff;
+    div {
+      padding: 0px;
+      width: 50%;
+      height: auto;
+      border: 0px;
+      label {
+        float: left;
+        width: 30%;
+        background: #ddd;
+      }
+      input {
+        float: right;
+        width: 70%;
+      }
+    }
+  }
+
+  .div-n-lanc {
+    width: 18.4%;
+  }
+  .div-n-parcela {
+    width: 10%;
   }
   label {
     height: 27px;
@@ -36,6 +59,7 @@ body {
     margin: 0px 0px;
     width: 100%;
     padding: 3px 5px;
+    text-align: center;
   }
 }
 
@@ -44,12 +68,14 @@ body {
 .div-curso {
   width: 33% !important;
   label {
-    width: 104px;
+    width: 85px;
     float: left;
+    background: #ddd;
   }
   input {
-    width: 210px !important;
+    width: 238px !important;
     float: right !important;
+    text-align: left;
   }
 }
 #btn_download_pdf {
@@ -62,24 +88,24 @@ body {
   color: #fff;
   cursor: pointer;
   margin: 0 auto;
-  margin-top: 0px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 #btn_download_pdf:hover {
   background: rgb(3, 74, 182);
 }
 #btn_gerar_boleto {
   display: block;
-  background: rgb(124, 127, 141);
+  background: rgb(34, 114, 83);
   border: 0px;
   padding: 15px 20px;
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
-  margin-right: 20px;
-  float: left;
+  margin: 10px auto;
 }
 #btn_gerar_boleto:hover {
-  background: rgb(117, 139, 172);
+  background: rgb(31, 160, 80);
 }
 .bg_buttons {
   padding: 10px 30px;
@@ -89,11 +115,25 @@ body {
     margin-bottom: 20px;
   }
 }
+#boleto_master {
+  display: block;
+}
 #boleto_master,
 #boleto_master div {
   background: #f0f0f0;
 }
 .tag_boletos {
-  background: #333;
-  text-align: center;
+  background: #999 !important;
+  width: 99% !important;
+  height: 35px !important;
+  padding: 10px !important;
+  overflow: hidden;
+  border-radius: 5px 5px 0px 0px;
+  border: 0px !important;
+  h5 {
+    text-align: right;
+
+    color: #fff !important;
+    margin: 0 !important;
+  }
 }

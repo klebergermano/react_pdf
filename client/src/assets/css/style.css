@@ -706,20 +706,42 @@ body {
 }
 
 .boletos {
+  display: none;
   padding: 20px 60px;
   background: #fff;
   overflow: hidden;
   width: 100%;
   height: auto;
   border: 1px solid #ccc;
+  margin: 5px 0px;
 }
 .boletos div {
-  padding: 15px 15px;
-  width: auto;
+  padding: 15px 10px;
   float: left;
   border: 1px solid #ccc;
   width: 14.14%;
   background: #fff;
+}
+.boletos div div {
+  padding: 0px;
+  width: 50%;
+  height: auto;
+  border: 0px;
+}
+.boletos div div label {
+  float: left;
+  width: 30%;
+  background: #ddd;
+}
+.boletos div div input {
+  float: right;
+  width: 70%;
+}
+.boletos .div-n-lanc {
+  width: 18.4%;
+}
+.boletos .div-n-parcela {
+  width: 10%;
 }
 .boletos label {
   height: 27px;
@@ -733,6 +755,7 @@ body {
   margin: 0px 0px;
   width: 100%;
   padding: 3px 5px;
+  text-align: center;
 }
 
 .div-responsavel,
@@ -743,14 +766,16 @@ body {
 .div-responsavel label,
 .div-aluno label,
 .div-curso label {
-  width: 104px;
+  width: 85px;
   float: left;
+  background: #ddd;
 }
 .div-responsavel input,
 .div-aluno input,
 .div-curso input {
-  width: 210px !important;
+  width: 238px !important;
   float: right !important;
+  text-align: left;
 }
 
 #btn_download_pdf {
@@ -763,7 +788,8 @@ body {
   color: #fff;
   cursor: pointer;
   margin: 0 auto;
-  margin-top: 0px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #btn_download_pdf:hover {
@@ -772,18 +798,17 @@ body {
 
 #btn_gerar_boleto {
   display: block;
-  background: #7c7f8d;
+  background: #227253;
   border: 0px;
   padding: 15px 20px;
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
-  margin-right: 20px;
-  float: left;
+  margin: 10px auto;
 }
 
 #btn_gerar_boleto:hover {
-  background: #758bac;
+  background: #1fa050;
 }
 
 .bg_buttons {
@@ -795,14 +820,28 @@ body {
   margin-bottom: 20px;
 }
 
+#boleto_master {
+  display: block;
+}
+
 #boleto_master,
 #boleto_master div {
   background: #f0f0f0;
 }
 
 .tag_boletos {
-  background: #333;
-  text-align: center;
+  background: #999 !important;
+  width: 99% !important;
+  height: 35px !important;
+  padding: 10px !important;
+  overflow: hidden;
+  border-radius: 5px 5px 0px 0px;
+  border: 0px !important;
+}
+.tag_boletos h5 {
+  text-align: right;
+  color: #fff !important;
+  margin: 0 !important;
 }
 
 /*# sourceMappingURL=style.css.map */
