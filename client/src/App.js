@@ -125,6 +125,9 @@ class App extends Component {
   };
 
   createAndDownloadPdf = () => {
+    let nomeResp = this.state.boleto_master.responsavel.trim();
+    let n_carne = this.state.boleto_master.n_carne.trim();
+    let docName = nomeResp + "-carne-" + n_carne;
     document.querySelector("#load_img").style.display = "block";
 
     axios
@@ -133,7 +136,7 @@ class App extends Component {
       .then(res => {
         const pdfBlob = new Blob([res.data], { type: "application/pdf" });
 
-        saveAs(pdfBlob, "newPdf.pdf");
+        saveAs(pdfBlob, docName + ".pdf");
       })
       .then(() => {
         document.querySelector("#load_img").style.display = "none";

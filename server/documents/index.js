@@ -43,7 +43,7 @@ module.exports = ({
             font-family: "Roboto"; padding-left:10px; color:#111;
           }
          
-          .bg_boleto {width: 21cm;  border-bottom: 1px dotted #fff; height: 7.425cm; background: #fff;  overflow: hidden; border-bottom:1px dotted #ccc}
+          .bg_boleto {width: 21cm;  border-bottom: 1px dotted #fff; height: 7.42cm; background: #fff;  overflow: hidden; border-bottom:1px dotted #ccc}
           .bloco_cliente {  padding: 10px 15px 10px 30px;  float: left; width: 7.72cm; height: 7.43cm; border-right: 1px dotted #ccc; }
           .bloco_destaque {  padding: 10px 20px 10px 10px;  background: #fff; float: right;  width: 13.12cm; height: 7.43cm; border-right: 1px dotted #fff; }
           th {} table,th,td { border: 1px solid #bbb; border-collapse: collapse; }
