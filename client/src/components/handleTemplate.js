@@ -32,7 +32,7 @@ export const handleTemplate = (
           <tr>
             <td class="font_6" colspan="1">
               <span class="label_top"><b>Nº Lanç.</b></span>
-              ${n_lanc}
+             <span class='n_lanc'> ${n_lanc}</span>
             </td>
   
             <td colspan="1">
@@ -77,8 +77,8 @@ export const handleTemplate = (
               <span class="RA_cliente">Via do aluno: RA${RA}</span>
             </td>
   
-            <td colspan="3">
-              <br /><span class="data_cliente"> Data ___/___/____</span><br />
+            <td colspan="5">
+              <br /><span class="data_cliente"> Data ____/____/____</span><br />
             </td>
           </tr>
         </table>
@@ -88,7 +88,7 @@ export const handleTemplate = (
         <table style="width:100%">
           <tr width="100%">
             <td colspan="4" class="seta_nome">
-              <h3><span>SETA CURSOS </span><b>RECIBO DE PAGAMENTO</b></h3>
+              <h3><span>SETA CURSOS </span><span id='title_recibo_pag'>RECIBO DE PAGAMENTO</span></h3>
             </td>
             <td class="font_6" colspan="1"><b>Nº Lanç.</b> ${n_lanc}</td>
           </tr>

@@ -1,10 +1,10 @@
 body {
-  background: #333;
+  background: #222;
 }
 .container {
   width: 1170px;
   min-height: 100vh;
-  background: #f0f0f0;
+  background: #fff;
   margin: 0 auto;
 }
 
@@ -15,14 +15,14 @@ body {
   overflow: hidden;
   width: 100%;
   height: auto;
-  border: 1px solid #ccc;
-  margin: 5px 0px;
+  margin: 0px 0px;
+
   div {
-    padding: 15px 10px;
+    padding: 15px 15px;
     float: left;
     border: 1px solid #ccc;
-    width: 14.14%;
-    background: #fff;
+    width: 14.28%;
+    max-height: 90px;
     div {
       padding: 0px;
       width: 50%;
@@ -32,6 +32,7 @@ body {
         float: left;
         width: 30%;
         background: #ddd;
+        padding: 5px 0px 0px 6px;
       }
       input {
         float: right;
@@ -40,91 +41,47 @@ body {
     }
   }
 
-  .div-n-lanc {
-    width: 18.4%;
-  }
-  .div-n-parcela {
-    width: 10%;
-  }
   label {
     height: 27px;
-    padding: 4px 5px;
+    padding: 5px 5px;
     display: block;
     width: 100%;
     // background: rgb(86, 83, 90);
     color: #333;
     font-size: 13px;
+    margin-bottom: 10px;
+    margin-top: -5px;
   }
   input {
     margin: 0px 0px;
     width: 100%;
-    padding: 3px 5px;
+    padding: 3px 0px 3px 5px;
     text-align: center;
   }
+}
+.boletos:nth-child(even) {
+  background: #f0f0f0;
 }
 
 .div-responsavel,
 .div-aluno,
 .div-curso {
-  width: 33% !important;
+  width: 33.3333% !important;
   label {
+    margin-top: 0px;
     width: 85px;
     float: left;
-    background: #ddd;
   }
   input {
-    width: 238px !important;
+    width: 231px !important;
     float: right !important;
     text-align: left;
   }
 }
-#btn_download_pdf {
-  display: block;
-  clear: both;
-  background: rgb(34, 56, 146);
-  border: 0px;
-  padding: 15px 20px;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-#btn_download_pdf:hover {
-  background: rgb(3, 74, 182);
-}
-#btn_gerar_boleto {
-  display: block;
-  background: rgb(34, 114, 83);
-  border: 0px;
-  padding: 15px 20px;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  margin: 10px auto;
-}
-#btn_gerar_boleto:hover {
-  background: rgb(31, 160, 80);
-}
-.bg_buttons {
-  padding: 10px 30px;
-  button {
-    float: right;
-    margin-right: 20px;
-    margin-bottom: 20px;
-  }
-}
-#boleto_master {
-  display: block;
-}
-#boleto_master,
-#boleto_master div {
-  background: #f0f0f0;
-}
+
 .tag_boletos {
-  background: #999 !important;
-  width: 99% !important;
+  background: #666 !important;
+  width: 100% !important;
   height: 35px !important;
   padding: 10px !important;
   overflow: hidden;
@@ -136,4 +93,103 @@ body {
     color: #fff !important;
     margin: 0 !important;
   }
+}
+
+/*----------------Master----------*/
+#boleto_master {
+  border-top: 5px solid #444;
+  display: block;
+  margin-top: 0px;
+  background: #f0f0f0;
+
+  #bg_blocks_master {
+    border: 1px solid #aaa;
+    overflow: hidden;
+  }
+
+  div {
+    border-color: #aaa;
+    width: 13.85%;
+
+    label {
+      color: #fff;
+      background: transparent;
+      color: #333;
+    }
+  }
+  .div-n-lanc {
+    width: 20% !important;
+
+    div {
+      width: 50%;
+      label {
+        width: 20%;
+        float: left;
+      }
+      input {
+        width: 70%;
+      }
+    }
+  }
+  .div-n-parcela {
+    width: 9.6% !important;
+  }
+
+  .div-vencimento {
+    width: 15% !important;
+  }
+  select {
+    width: 200px;
+    padding: 4px 5px;
+  }
+}
+
+.bg_buttons {
+  background: #222;
+  display: none;
+  overflow: hidden;
+  padding: 10px 30px;
+  position: fixed;
+  width: 1170px;
+
+  #btn_download_pdf {
+    display: block;
+    clear: both;
+    background: rgb(34, 56, 146);
+    border: 0px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-right: 60px;
+    margin-bottom: 20px;
+    float: right;
+  }
+}
+
+#btn_download_pdf:hover {
+  background: rgb(3, 74, 182);
+}
+
+#bg_btn_gerar_boleto {
+  width: 100% !important;
+  padding: 20px;
+  overflow: hidden;
+}
+
+#btn_gerar_boleto {
+  display: block;
+  background: #999;
+  border: 0px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  float: right;
+  width: 150px;
+}
+#btn_gerar_boleto:hover {
+  background: rgb(31, 160, 110);
 }

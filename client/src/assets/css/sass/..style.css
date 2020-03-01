@@ -695,13 +695,13 @@ textarea {
 }
 /*----------------------------------------*/
 body {
-  background: #222;
+  background: #262626;
 }
 
 .container {
   width: 1170px;
   min-height: 100vh;
-  background: #fff;
+  background: #f0f0f0;
   margin: 0 auto;
 }
 
@@ -712,14 +712,14 @@ body {
   overflow: hidden;
   width: 100%;
   height: auto;
-  margin: 0px 0px;
+  border: 1px solid #ccc;
+  margin: 5px 0px;
 }
 .boletos div {
   padding: 15px 15px;
   float: left;
   border: 1px solid #ccc;
-  width: 14.28%;
-  max-height: 90px;
+  width: 13.75%;
 }
 .boletos div div {
   padding: 0px;
@@ -737,6 +737,19 @@ body {
   float: right;
   width: 70%;
 }
+.boletos #bg_blocks_master {
+  border: 1px solid #111;
+  overflow: hidden;
+}
+.boletos .div-n-lanc {
+  width: 20.4%;
+}
+.boletos .div-n-parcela {
+  width: 9.6%;
+}
+.boletos .div-vencimento {
+  width: 15%;
+}
 .boletos label {
   height: 27px;
   padding: 5px 5px;
@@ -744,8 +757,6 @@ body {
   width: 100%;
   color: #333;
   font-size: 13px;
-  margin-bottom: 10px;
-  margin-top: -5px;
 }
 .boletos input {
   margin: 0px 0px;
@@ -755,7 +766,7 @@ body {
 }
 
 .boletos:nth-child(even) {
-  background: #f0f0f0;
+  background: #f6f6f6;
 }
 
 .div-responsavel,
@@ -766,21 +777,90 @@ body {
 .div-responsavel label,
 .div-aluno label,
 .div-curso label {
-  margin-top: 0px;
   width: 85px;
   float: left;
+  background: #ddd;
 }
 .div-responsavel input,
 .div-aluno input,
 .div-curso input {
-  width: 231px !important;
+  width: 228px !important;
   float: right !important;
   text-align: left;
 }
 
+#btn_download_pdf {
+  display: block;
+  clear: both;
+  background: #223892;
+  border: 0px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#btn_download_pdf:hover {
+  background: #034ab6;
+}
+
+#btn_gerar_boleto {
+  display: block;
+  background: #227253;
+  border: 0px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px auto;
+}
+
+#btn_gerar_boleto:hover {
+  background: #1fa050;
+}
+
+.bg_buttons {
+  background: #333;
+  overflow: hidden;
+  padding: 10px 30px;
+}
+.bg_buttons button {
+  float: right;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+#boleto_master {
+  display: block;
+}
+
+#bg_btn_gerar_boleto {
+  width: 100%;
+  padding: 20px;
+  overflow: hidden;
+}
+
+#boleto_master {
+  margin-top: 0px;
+}
+
+#boleto_master,
+#boleto_master div {
+  background: #444;
+  border-color: #111;
+}
+#boleto_master label,
+#boleto_master div label {
+  color: #fff;
+  background: #444;
+}
+
 .tag_boletos {
-  background: #666 !important;
-  width: 100% !important;
+  background: #999 !important;
+  width: 99% !important;
   height: 35px !important;
   padding: 10px !important;
   overflow: hidden;
@@ -793,98 +873,4 @@ body {
   margin: 0 !important;
 }
 
-/*----------------Master----------*/
-#boleto_master {
-  border-top: 5px solid #444;
-  display: block;
-  margin-top: 0px;
-  background: #f0f0f0;
-}
-#boleto_master #bg_blocks_master {
-  border: 1px solid #aaa;
-  overflow: hidden;
-}
-#boleto_master div {
-  border-color: #aaa;
-  width: 13.85%;
-}
-#boleto_master div label {
-  color: #fff;
-  background: transparent;
-  color: #333;
-}
-#boleto_master .div-n-lanc {
-  width: 20% !important;
-}
-#boleto_master .div-n-lanc div {
-  width: 50%;
-}
-#boleto_master .div-n-lanc div label {
-  width: 20%;
-  float: left;
-}
-#boleto_master .div-n-lanc div input {
-  width: 70%;
-}
-#boleto_master .div-n-parcela {
-  width: 9.6% !important;
-}
-#boleto_master .div-vencimento {
-  width: 15% !important;
-}
-#boleto_master select {
-  width: 200px;
-  padding: 4px 5px;
-}
-
-.bg_buttons {
-  background: #222;
-  display: none;
-  overflow: hidden;
-  padding: 10px 30px;
-  position: fixed;
-  width: 1170px;
-}
-.bg_buttons #btn_download_pdf {
-  display: block;
-  clear: both;
-  background: #223892;
-  border: 0px;
-  padding: 15px 20px;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  margin: 0 auto;
-  margin-top: 20px;
-  margin-right: 60px;
-  margin-bottom: 20px;
-  float: right;
-}
-
-#btn_download_pdf:hover {
-  background: #034ab6;
-}
-
-#bg_btn_gerar_boleto {
-  width: 100% !important;
-  padding: 20px;
-  overflow: hidden;
-}
-
-#btn_gerar_boleto {
-  display: block;
-  background: #999;
-  border: 0px;
-  padding: 15px 20px;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  float: right;
-  width: 150px;
-}
-
-#btn_gerar_boleto:hover {
-  background: #1fa06e;
-}
-
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=..style.css.map */

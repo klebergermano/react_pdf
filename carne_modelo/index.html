@@ -2,11 +2,12 @@
 <html>
   <head>
     <title></title>
+    <meta http-equiv="Content-Language" content="pt-br" />
+    <meta charset="UTF-8" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-
     <link
       href="https://fonts.googleapis.com/css?family=Archivo+Black|Roboto:500&display=swap"
       rel="stylesheet"
@@ -14,11 +15,13 @@
     <style>
       * {
         box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
       }
       .a4 {
         font-family: "Open Sans";
         width: 21cm;
-        height: 29.7cm;
+        height: auto;
         overflow: hidden;
         margin: 0 auto;
         background: #f0f0f0;
@@ -26,9 +29,13 @@
       .bg_boleto {
         width: 21cm;
         border-bottom: 1px dotted #fff;
-        height: 7.43cm;
+        height: 7.425cm;
         background: #fff;
         overflow: hidden;
+        border-top: 1px solid #ddd;
+      }
+      .bg_boleto:first-child {
+        border-top: 0px !important;
       }
       .bloco_cliente {
         padding: 10px 15px 10px 30px;
@@ -39,7 +46,6 @@
       }
       .bloco_destaque {
         padding: 10px 20px 10px 10px;
-
         background: #fff;
         float: right;
         width: 13.12cm;
@@ -87,11 +93,9 @@
       .RA {
         font-size: 10px;
       }
-
       hr {
         margin-top: 25px;
       }
-
       .ass {
         padding: 8px;
         border-bottom: 0px;
@@ -107,7 +111,6 @@
         float: right;
         padding: 0px 10px;
       }
-
       .curso {
         font-size: 15px;
         padding: 0 5px;
@@ -133,7 +136,6 @@
       .cifrao_total {
         font-size: 13px;
       }
-
       .bloco_cliente b {
         font-size: 10px;
       }
