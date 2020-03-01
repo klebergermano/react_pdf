@@ -58,7 +58,7 @@ export const handleTemplate = (
             <td colspan="1">
               <span class="label_top"><b>Valor Total</b></span>
   
-              R$ ${valor_total}
+             <b> R$ ${valor_total}</b>
             </td>
           </tr>
           <tr>

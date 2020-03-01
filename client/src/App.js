@@ -125,6 +125,8 @@ class App extends Component {
   };
 
   createAndDownloadPdf = () => {
+    document.querySelector("#load_img").style.display = "block";
+
     axios
       .post("/create-pdf", this.state)
       .then(() => axios.get("fetch-pdf", { responseType: "blob" }))
@@ -132,6 +134,9 @@ class App extends Component {
         const pdfBlob = new Blob([res.data], { type: "application/pdf" });
 
         saveAs(pdfBlob, "newPdf.pdf");
+      })
+      .then(() => {
+        document.querySelector("#load_img").style.display = "none";
       });
   };
 
@@ -275,6 +280,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div id="load_img">
+          <img alt="loader" src={require("./assets/img/loader_pdf.gif")} />
+        </div>
         <div className="container">
           {/* <button onClick={this.showMasterStatus}>Mostrar Valores</button>
            */}
@@ -283,6 +291,7 @@ class App extends Component {
               Download PDF
             </button>
           </div>
+
           <div id="boleto_master" className="boletos">
             <main id="bg_blocks_master">
               <div class="div-responsavel">
@@ -316,6 +325,8 @@ class App extends Component {
                   name="curso"
                   onChange={this.handleChange}
                 >
+                  <option disabled selected></option>
+
                   <option>Informática</option>
                   <option>Informática Básica</option>
                   <option>Inglês</option>
